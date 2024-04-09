@@ -1,0 +1,28 @@
+2024-04-09 11:17:58.945 [info] 
+
+
+
+
+2024-04-09 11:17:58.945 [info] Extension host agent started.
+2024-04-09 11:17:58.945 [info] [<unknown>][0aacf729][ExtensionHostConnection] New connection established.
+2024-04-09 11:17:58.945 [info] Started initializing default profile extensions in extensions installation folder. file:///home/pi/.vscode-server/extensions
+2024-04-09 11:17:58.945 [info] [<unknown>][a932b480][ManagementConnection] New connection established.
+2024-04-09 11:17:59.204 [info] [<unknown>][0aacf729][ExtensionHostConnection] <1033> Launched Extension Host Process.
+2024-04-09 11:17:59.353 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/pi/.vscode-server/extensions
+2024-04-09 11:18:19.683 [info] [<unknown>][767c612a][ManagementConnection] New connection established.
+2024-04-09 11:18:19.690 [info] [<unknown>][f6683774][ExtensionHostConnection] New connection established.
+2024-04-09 11:18:19.706 [info] [<unknown>][f6683774][ExtensionHostConnection] <1138> Launched Extension Host Process.
+2024-04-09 11:18:21.983 [error] CodeExpectedError: Could not find pty on pty host
+    at D.U (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:47:32471)
+    at D.updateTitle (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:47:27632)
+    at j.<computed> (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:47:22875)
+    at Object.call (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:36:5137)
+    at l.s (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:34:5145)
+    at l.q (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:34:4647)
+    at n.value (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:34:4045)
+    at t.y (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:29:665)
+    at t.fire (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:29:882)
+    at process.ue (/home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/server/out/vs/platform/terminal/node/ptyHostMain.js:25:10030)
+    at process.emit (node:events:517:28)
+    at emit (node:internal/child_process:944:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
