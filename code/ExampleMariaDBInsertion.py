@@ -6,8 +6,6 @@ sys.path.append(current_dir)
 
 from MariaDBConnector import DatabaseManager
 
-from datetime import datetime
-
 class sensor_data:
     __version__ = 1
 
@@ -26,7 +24,7 @@ class sensor_data:
         self.battery3 = battery3
         self.pressure = pressure
 
-db = DatabaseManager(host='localhost', user='pi', password='raspberry', database='ipro497')
+db = DatabaseManager(host='localhost', user='root', password='raspberry', database='ipro497')
 
 obj = sensor_data(1, datetime.now(), 37.7749, -122.4194, 1, 5.1, 100.0, 25.5, 60.0, 3.7, 3.8, 3.9, 1013.25)
 db.insert_object(obj)
