@@ -437,3 +437,110 @@ sudo nmcli c down IIT-IoT
 sudo nmcli c up ESP32-AP
 sudo mariadb
 help
+ufw allow 7000
+sudo ufw allow 7000
+ping localhost:7000
+ping 0.0.0.0:7000
+git commit -a -m "Socket, Web and new Dummy data"
+git status
+python code/DummySocket.py
+pip install websockets 
+python code/DummySocket.py
+sudo python code/DummySocket.py
+python code/DummySocket.py
+cd code
+ls
+python EsampleMariaDBInsertion.py
+python ExampleMariaDBInsertion.py
+cd code
+python ExampleMariaDBInsertion.py
+sudo mariadb
+help
+git status
+clear
+mariadb
+sudo mariadb
+php -S 0.0.0.0:8000
+ls
+cd code
+cd Website
+php -S 0.0.0.0:8000
+cd code
+ls
+python DummySocket.py
+cd code
+python TestServer.py
+clear
+help
+clear
+flkaj
+python TestServer.py
+ifconfig
+nmcli c shw
+nmcli c show
+nmcli c down IIT-IoT
+nmcli device wifi connect ESP32_AP --ask
+python TestServer.py
+ifconfig
+python TestServer.py
+nmcli c show
+python TestServer.py
+ip addr
+python TestServer.py
+sudo ufw status
+sudo ufw allow 8000
+sudo ufw status
+python TestServer.py
+nmcli c down ESP32_AP
+nmcli c up IIT-IoT
+nmcli c show
+cd
+ifconfig
+nmcli c list 
+nmcli c 
+nmcli down IIT-IoT
+nmcli c down IIT-IoT
+nmcli c up ESP_AP
+nmcli c up ESP32_AP
+ifconfig
+ifconig
+nmcli c down ESP32_AP\\\\\\\
+nmcli c up IIT-IoT
+clear
+ifconfig
+cd code
+cd Webserver
+cd Website
+ls
+sudo php -S 0.0.0.0:8000 &
+cd code
+ls
+python DummySocket.py
+sudo ufw allow 7000
+python DummySocket.py
+cat DummySocket.py
+sudo reboot
+python DummySocket.py
+cd code
+cat DummySocket.py
+sudo reboot
+cd code
+cat DummySocket.py
+python DummySocket.py
+cd Website/
+ls
+sudo nano index.php
+sudo vim index.php
+sudo nano index.php
+cat index.php
+exit
+cd code/website
+cd code
+ls
+cd Website/
+ls
+php -S 0.0.0.0:8000
+exit
+sudo reboot
+cd code/Website/
+php -S 0.0.0.0:8000

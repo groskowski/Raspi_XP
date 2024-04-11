@@ -1,5 +1,6 @@
-Listening on 127.0.0.1:45455
-[2024-04-10 17:36:31] info Disposed of connection to running server.
-looking for token f2a201af-b88b-4234-847a-e5cff94b26f2, got Some("f2a201af-b88b-4234-847a-e5cff94b26f2")
-[2024-04-10 17:36:31] info Checking /home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/log.txt and /home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/pid.txt for a running server...
-[2024-04-10 17:36:31] info Found running server (pid=13248)
+Listening on 127.0.0.1:46607
+[2024-04-11 16:57:25] info Disposed of connection to running server.
+looking for token 6d90e1b2-fae2-4c84-8403-5d6f5248d199, got Some("6d90e1b2-fae2-4c84-8403-5d6f5248d199")
+[2024-04-11 16:57:25] info Checking /home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/log.txt and /home/pi/.vscode-server/cli/servers/Stable-5c3e652f63e798a5ac2f31ffd0d863669328dc4c/pid.txt for a running server...
+[2024-04-11 16:57:25] info Starting server...
+[2024-04-11 16:57:26] info Server started
