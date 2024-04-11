@@ -383,3 +383,57 @@ idf.py set-target esp32
 idf.py build
 idf.py -p PORT flash monitor
 idf.py -p /dev/ttyUSB0 flash monitor
+git
+git status
+git add *
+git commit -m "4/10/24"
+git status
+git ignore
+touch .gitgnore
+git status
+git commit -a -m "
+"
+git commit -a -m "gitignore attempt"
+git status
+git add -f .cache/
+git remove -f .cache/
+git restore  -f .cache/
+git restore  .cache/
+git status
+git restore --staged .cache/
+git status
+git add -f .gitignore
+git status
+git add -f .gitconfig
+ls
+git commit -a -m "General git configuraiton"
+git status
+git clone https://github.com/IPRO-497-Website/Website
+cd code
+cd Website
+tree
+apt install 
+sudo apt install tree
+clear
+tree
+php
+sudo apt install php libapache2-mod-php php-mysql php-cli php-curl php-json php-gd
+php -v
+php -S localhost:8000
+ls
+sudo ufw allow 8000
+php -S localhost:8000
+php -S 0.0.0.0:8000
+ifconfig
+netstat -an | grep 8000
+netstat -an
+ping localhost:8000
+
+ifconfig
+nmcli 
+nmcli up
+nmcli c up
+sudo nmcli c down IIT-IoT
+sudo nmcli c up ESP32-AP
+sudo mariadb
+help
