@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "wifi_xprize_softAPdhcp",
-    "project_version":    "3614d6a-dirty",
+    "project_version":    "da1187d-dirty",
     "project_path":       "/home/pi/code/softap-dhcp",
     "idf_path":           "/home/pi/esp/esp-idf",
     "build_dir":          "/home/pi/code/softap-dhcp/build",

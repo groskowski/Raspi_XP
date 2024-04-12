@@ -9,49 +9,42 @@ fi
 # Function to optionally print messages
 log() {
   if [[ $VERBOSE -eq 1 ]]; then
-    echo "$@"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $@"
   fi
 }
 
-# Enable ufw
-sudo ufw enable >/dev/null 2>&1
-log "UFW enabled."
+log "Starting the setup process..."
+
+# Check if UFW is already enabled
+ufw_status=$(sudo ufw status | grep -o "Status: active")
+if [[ $ufw_status == "Status: active" ]]; then
+    log "UFW is already enabled."
+else
+    log "UFW is not enabled, enabling now..."
+    sudo ufw enable -y >/dev/null 2>&1
+fi
 
 # Allow necessary ports
+log "Allowing ports..."
 sudo ufw allow 22 >/dev/null 2>&1
 log "Port 22 open."
 sudo ufw allow 80 >/dev/null 2>&1
 log "Port 80 open."
-sudo ufw allow 8000 >/dev/null 2>&1
-log "Port 8000 open."
 sudo ufw allow 7000 >/dev/null 2>&1
 log "Port 7000 open."
 
 # Start the PHP server
+log "Starting the PHP server..."
 cd /home/pi/code/Website
-sudo php -S 0.0.0.0:8000 >/dev/null 2>&1 &
+sudo php -S 0.0.0.0:80 >/dev/null 2>&1 &
 php_pid=$!
 log "PHP server process started."
 
 # Start the Python script
+log "Starting the Python script..."
 cd /home/pi/code
 python DummySocket.py >/dev/null 2>&1 &
 python_pid=$!
 log "Python script process started."
 
-# Wait for a few seconds to allow the servers to start
-sleep 5
-
-# Check if the PHP server is running
-if ps -p $php_pid > /dev/null; then
-    log "PHP server started successfully."
-else
-    echo "PHP server failed to start."
-fi
-
-# Check if the Python script is running
-if ps -p $python_pid > /dev/null; then
-    log "Python websocket at port 7000 started successfully."
-else
-    echo "Python websocket failed to start."
-fi
+sudo check_status

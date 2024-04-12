@@ -82,9 +82,11 @@ sudo cp ~/config/startup.sh /home/pi/startup.sh
 sudo cp ~/config/sshd_config /etc/ssh/sshd_config
 sudo cp ~/config/network_monitor.service /etc/systemd/system/network_monitor.service
 
-sudo systemctl daemon-reload
-sudo systemctl enable network_monitor.service
-sudo systemctl start network_monitor.service
+#sudo systemctl daemon-reload
+#sudo systemctl enable network_monitor.service
+#sudo systemctl start network_monitor.service
+
+cd commands
 
 # Create commands
 sudo cp check_status stop_php stop_python /usr/local/bin/
@@ -94,6 +96,8 @@ sudo chmod +x /usr/local/bin/stop_python
 
 # Make the startup script executable
 sudo chmod +x /home/pi/config/startup.sh
+
+cd /home/pi
 
 # Set up ESP32 firmware (Commented out because it's part of the git repository)
 #mkdir -p ~/esp
