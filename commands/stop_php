@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Stop the PHP server
+php_pid=$(pgrep -f "php -S 0.0.0.0:8000")
+if [ -n "$php_pid" ]; then
+    sudo kill $php_pid
+    echo "PHP server stopped"
+else
+    echo "PHP server is not running"
+fi

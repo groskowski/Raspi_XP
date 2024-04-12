@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if the PHP server is running
+php_pid=$(pgrep -f "php -S 0.0.0.0:8000")
+if [ -n "$php_pid" ]; then
+    echo "PHP server is running (PID: $php_pid)"
+else
+    echo "PHP server is not running"
+fi
+
+# Check if the Python script is running
+python_pid=$(pgrep -f "python DummySocket.py")
+if [ -n "$python_pid" ]; then
+    echo "Python script is running (PID: $python_pid)"
+else
+    echo "Python script is not running"
+fi

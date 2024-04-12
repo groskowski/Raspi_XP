@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Stop the Python script
+python_pid=$(pgrep -f "python DummySocket.py")
+if [ -n "$python_pid" ]; then
+    sudo kill $python_pid
+    echo "Python script stopped"
+else
+    echo "Python script is not running"
+fi
