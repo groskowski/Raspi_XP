@@ -1,6 +1,6 @@
 .vscode-server/*
 code/Website/config.ini
-esp/esp-idf/*
+esp/esp-idf
 .cache/
 .espressif/
 .local/
