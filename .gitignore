@@ -7,3 +7,6 @@ esp/esp-idf
 .nmcli-history
 .python_history
 .ssh/
+.bashrc
+.bash_logout
+.bash_history

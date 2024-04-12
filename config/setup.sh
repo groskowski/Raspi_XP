@@ -4,17 +4,38 @@ echo "The setup protocol has started. Contact Gabriel Roskowski in case of malfu
 
 # Check if nmcli is available
 if ! command -v nmcli &> /dev/null; then
+    echo "Installing Network Manager..."
     sudo apt install -y network-manager
 fi
 
-# Connect to the Wi-Fi network
-read -p "Enter the Wi-Fi network name (SSID): " wifi_ssid
-read -s -p "Enter the Wi-Fi password: " wifi_password
-echo ""
-sudo nmcli dev wifi connect "$wifi_ssid" password "$wifi_password"
+# Function to connect to Wi-Fi
+connect_to_wifi() {
+    read -p "Enter the Wi-Fi network name (SSID): " wifi_ssid
+    read -s -p "Enter the Wi-Fi password: " wifi_password
+    echo ""
+    sudo nmcli dev wifi connect "$wifi_ssid" password "$wifi_password"
+}
 
-# Restart DHCP client service
-sudo systemctl restart dhcpcd
+# Loop until connected to the internet
+while true; do
+    echo "Checking Internet connectivity..."
+    if ping -c 2 google.com &> /dev/null; then
+        echo "Internet connection is available."
+        break
+    else
+        echo "Internet connection failed. Please enter your Wi-Fi settings."
+    fi
+
+    connect_to_wifi
+done
+
+# Restart DHCP client service if needed
+if ping -c 2 google.com &> /dev/null; then
+    echo ""
+else
+    sudo systemctl restart dhcpcd
+fi
+
 
 # Update package list and install required packages
 sudo apt update
@@ -70,9 +91,9 @@ sudo chmod +x /usr/local/bin/stop_python
 sudo chmod +x /home/pi/config/startup.sh
 
 # Set up ESP32 firmware
-mkdir -p ~/esp
-cd ~/esp
-git clone --recursive https://github.com/espressif/esp-idf.git
+#mkdir -p ~/esp
+#cd ~/esp
+#git clone --recursive https://github.com/espressif/esp-idf.git
 
 # Prompt for installing ESP-IDF
 read -p "Do you want to install ESP-IDF now? (y/n): " install_choice
@@ -83,7 +104,7 @@ if [[ $install_choice =~ ^[Yy]$ ]]; then
     . $HOME/esp/esp-idf/export.sh
     
     # Prompt for building ESP-IDF examples
-    read -p "Do you want to build ESP-IDF examples now? (y/n): " build_choice
+    read -p "Do you want to build code/softAP/* now? (y/n): " build_choice
     if [[ $build_choice =~ ^[Yy]$ ]]; then
         cd ~/code/softAP
         idf.py set-target esp32
@@ -114,8 +135,10 @@ sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTI
 sudo mysql -e "FLUSH PRIVILEGES;"
 
 # Reboot the Raspberry Pi
-read -p "Setup complete. Do you want to reboot now? (y/n): " reboot_choice
+read -p "Setup complete. Do you want to reboot now to apply some required changes? (y/n): " reboot_choice
 if [[ $reboot_choice =~ ^[Yy]$ ]]; then
+    echo "Adeus..."
+    sleep 2
     sudo reboot
 else
     echo "Please reboot manually to apply the changes."
