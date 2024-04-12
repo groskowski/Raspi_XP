@@ -544,3 +544,5 @@ exit
 sudo reboot
 cd code/Website/
 php -S 0.0.0.0:8000
+cd code
+python DummySocket.py
