@@ -1,1 +1,9 @@
 .vscode-server/*
+code/Website/config.ini
+esp/esp-idf/*
+.cache/
+.espressif/
+.local/
+.nmcli-history
+.python_history
+.ssh/
