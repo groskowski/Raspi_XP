@@ -80,6 +80,11 @@ sudo cp ~/config/dhcpcd.conf /etc/dhcpcd.conf
 sudo cp ~/config/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
 sudo cp ~/config/startup.sh /home/pi/startup.sh
 sudo cp ~/config/sshd_config /etc/ssh/sshd_config
+sudo cp ~/config/network_monitor.service /etc/systemd/system/network_monitor.service
+
+sudo systemctl daemon-reload
+sudo systemctl enable network_monitor.service
+sudo systemctl start network_monitor.service
 
 # Create commands
 sudo cp check_status stop_php stop_python /usr/local/bin/
@@ -90,7 +95,7 @@ sudo chmod +x /usr/local/bin/stop_python
 # Make the startup script executable
 sudo chmod +x /home/pi/config/startup.sh
 
-# Set up ESP32 firmware
+# Set up ESP32 firmware (Commented out because it's part of the git repository)
 #mkdir -p ~/esp
 #cd ~/esp
 #git clone --recursive https://github.com/espressif/esp-idf.git

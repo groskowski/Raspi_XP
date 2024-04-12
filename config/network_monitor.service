@@ -1,0 +1,11 @@
+[Unit]
+Description=Network Connection Monitoring and Reconnection
+After=network.target
+
+[Service]
+ExecStart=/home/pi/config/network_monitor.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

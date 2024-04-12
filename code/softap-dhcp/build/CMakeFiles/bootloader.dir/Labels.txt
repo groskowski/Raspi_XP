@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/pi/code/softap-dhcp/build/CMakeFiles/bootloader
+/home/pi/code/softap-dhcp/build/CMakeFiles/bootloader.rule
+/home/pi/code/softap-dhcp/build/CMakeFiles/bootloader-complete.rule
+/home/pi/code/softap-dhcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/pi/code/softap-dhcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/pi/code/softap-dhcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/pi/code/softap-dhcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/home/pi/code/softap-dhcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/pi/code/softap-dhcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/pi/code/softap-dhcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
