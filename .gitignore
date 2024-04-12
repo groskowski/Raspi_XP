@@ -1,4 +1,4 @@
-.vscode-server/*
+.vscode-server/
 code/Website/config.ini
 esp/esp-idf
 .cache/
