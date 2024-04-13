@@ -1,0 +1,577 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3-dev-3226-g54c0b486d3 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Apr 12 2024 18:02:30[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (37) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (50) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (60) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (86) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=218f4h (137460) map[0m
+[0;32mI (153) esp_image: segment 1: paddr=0003191c vaddr=3ffb0000 size=03c6ch ( 15468) load[0m
+[0;32mI (159) esp_image: segment 2: paddr=00035590 vaddr=40080000 size=0aa88h ( 43656) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=834e4h (537828) map[0m
+[0;32mI (361) esp_image: segment 4: paddr=000c350c vaddr=4008aa88 size=0bbc0h ( 48064) load[0m
+[0;32mI (391) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (391) boot: Disabling RNG early entropy source...[0m
+[0;32mI (403) cpu_start: Multicore app[0m
+[0;32mI (412) cpu_start: Pro cpu start user code[0m
+[0;32mI (412) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (412) app_init: Application information:[0m
+[0;32mI (415) app_init: Project name:     wifi_xprize_softAPdhcp[0m
+[0;32mI (421) app_init: App version:      da1187d-dirty[0m
+[0;32mI (426) app_init: Compile time:     Apr 12 2024 18:02:06[0m
+[0;32mI (432) app_init: ELF file SHA256:  f1761595b...[0m
+[0;32mI (437) app_init: ESP-IDF:          v5.3-dev-3226-g54c0b486d3[0m
+[0;32mI (444) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (449) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (459) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (466) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (472) heap_init: At 3FFB8258 len 00027DA8 (159 KiB): DRAM[0m
+[0;32mI (478) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (484) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (491) heap_init: At 40096648 len 000099B8 (38 KiB): IRAM[0m
+[0;32mI (498) spi_flash: detected chip: generic[0m
+[0;32mI (502) spi_flash: flash io: dio[0m
+[0;33mW (505) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (560) wifi softAP: ESP_WIFI_MODE_AP[0m
+I (570) wifi:wifi driver task: 3ffc0218, prio:23, stack:6656, core=0
+I (580) wifi:wifi firmware version: a209922
+I (580) wifi:wifi certification version: v7.0
+I (580) wifi:config NVS flash: enabled
+I (580) wifi:config nano formating: disabled
+I (590) wifi:Init data frame dynamic rx buffer num: 32
+I (590) wifi:Init static rx mgmt buffer num: 5
+I (600) wifi:Init management short buffer num: 32
+I (600) wifi:Init dynamic tx buffer num: 32
+I (600) wifi:Init static rx buffer size: 1600
+I (610) wifi:Init static rx buffer num: 10
+I (610) wifi:Init dynamic rx buffer num: 32
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (650) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (660) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+I (740) wifi:mode : softAP (e8:31:cd:6a:d3:01)
+I (740) wifi:Total power save buffer number: 16
+I (740) wifi:Init max length of beacon: 752/752
+I (740) wifi:Init max length of beacon: 752/752
+[0;32mI (750) wifi softAP: wifi_init_softap finished. SSID:ESP32_AP password: channel:1[0m
+[0;32mI (750) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (760) main_task: Returned from app_main()[0m
+I (16110) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1
+I (16120) wifi:station: d8:3a:dd:b2:64:2a join, AID=1, bgn, 20
+[0;32mI (16120) wifi softAP: station d8:3a:dd:b2:64:2a join, AID=1[0m
+I (16250) wifi:<ba-add>idx:2 (ifx:1, d8:3a:dd:b2:64:2a), tid:6, ssn:0, winSize:64
+I (16260) wifi:<ba-add>idx:3 (ifx:1, d8:3a:dd:b2:64:2a), tid:7, ssn:0, winSize:64
+[0;32mI (16270) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+I (16420) wifi:<ba-add>idx:4 (ifx:1, d8:3a:dd:b2:64:2a), tid:0, ssn:0, winSize:64
+I (26640) wifi:new:<1,0>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1
+I (26650) wifi:station: e2:39:11:99:55:8e join, AID=2, bgn, 20
+[0;32mI (26650) wifi softAP: station e2:39:11:99:55:8e join, AID=2[0m
+[0;32mI (27360) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.4[0m
+I (86680) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1
+I (86680) wifi:station: 8c:1d:96:7d:88:13 join, AID=3, bgn, 40U
+[0;32mI (86680) wifi softAP: station 8c:1d:96:7d:88:13 join, AID=3[0m
+[0;32mI (86960) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.6[0m
+W (87150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (89670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (89670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (91760) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (94830) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (97540) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (97540) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (100220) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (102420) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (106100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (108100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (110930) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (113560) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (116640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (119440) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (121820) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (125040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (128330) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (132310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (137080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (140130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (144140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (146660) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (150100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (153130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (156540) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (156550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (158670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (162170) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (164740) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (164740) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (167050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (167050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (170700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (170700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (173070) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (175460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (175460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (177420) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (179650) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (181840) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (184100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (184100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (186180) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (186180) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (188630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (192600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (195140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (197230) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (200610) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (202750) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (205270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (209330) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (213030) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (213030) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (215080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (215080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (217310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (217310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (221220) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (223560) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (223560) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (226330) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (228460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (228460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (230640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (230650) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (233150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (233150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (235700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (237700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (239740) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (239740) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (241800) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (244080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (246210) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (248660) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (251090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (251100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (255210) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (258740) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (261180) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (263600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (266320) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (266320) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (269080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (275100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (277700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (277700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (280010) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (280010) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (283660) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (283670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (285950) wifi:[ADDBA]rx delba, code:37, delete tid:0
+I (287520) wifi:station: e2:39:11:99:55:8e leave, AID = 2, bss_flags is 33688675, bss:0x3ffb99c0
+I (287520) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1
+[0;32mI (287520) wifi softAP: station e2:39:11:99:55:8e leave, AID=2[0m
+W (287980) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (291090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (293450) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (297000) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (297000) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (301040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (303080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (305120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (305120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (309060) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (309060) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (314330) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (318110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (320960) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (320960) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (324110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (327970) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (327970) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (330500) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (334610) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (337610) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (337610) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (339720) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (341920) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (341920) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (344100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (344100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (347590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (349880) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (352160) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (352160) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (354940) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (354940) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (357100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (357100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (359800) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (362050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (362050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (364130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (366300) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (366300) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (368270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (368270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (370360) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (370360) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (372630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (372630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (374750) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (374750) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (376790) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (378780) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (378780) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (381270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (381270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (383430) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (385460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (387660) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (390680) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (393110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (393110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (395260) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (395260) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (397380) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (399490) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (401810) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (401810) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (404200) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (406420) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (406430) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (409100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (409100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (411270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (414830) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (416970) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (416970) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (419310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (421550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (421550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (423670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (425830) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (427900) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (430090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (433030) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (435140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (435140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (437630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (437630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (440120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (442290) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (442290) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (445150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (447730) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (447730) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (449850) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (452530) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (454530) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (457040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (459080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (461090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (465070) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (467140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (469480) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (471790) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (474190) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (476440) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (476440) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (480280) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (480280) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (482590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (482590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (482620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (482620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (484700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (487250) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (489680) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (491950) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (494200) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (494200) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (496660) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (496660) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (499340) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (499340) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (502050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (502050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (504330) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (506300) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (508800) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (511710) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (513860) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (516500) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (520060) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (520060) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (523120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (525270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (527740) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (530060) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (532650) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (534930) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (537150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (537150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (540100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (542090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (542090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (544620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (546680) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (548760) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (550810) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (552830) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (555090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (558470) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (560560) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (562960) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (566770) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (566770) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (569640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (572310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (572310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (575210) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (577880) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (580130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (582630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (584720) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (587420) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (590010) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (594400) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (597880) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (600010) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (602010) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (604140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (604140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (606150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (606150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (608780) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (608780) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (610820) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (613130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (615270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (617680) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (617680) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (619720) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (621980) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (624110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (624120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (626200) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (626200) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (628640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (628640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (633430) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (635580) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (635580) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (638120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (640950) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (644450) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (646890) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (649110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (652010) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (654400) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (654400) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (656890) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (658890) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (661100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (663620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (666450) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (669130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (669130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (671160) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (673410) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (673410) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (675360) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (677590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (680900) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (683420) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (686050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (686060) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (689030) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (691430) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (694120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (696410) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (698760) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (700950) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (705050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (705050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (707700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (707700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (710430) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (712910) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (715020) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (719030) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (721460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (723600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (723600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (725600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (725600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (727750) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (730090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (732630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (732630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (736460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (738590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (740700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (743730) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (745990) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (749340) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (752490) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (754630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (756620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (758760) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (758760) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (761780) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (764120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (766600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (766600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (769460) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (772600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (774670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (774670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (777220) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (780980) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (783090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (783090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (785100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (785100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (787200) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (790050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (793210) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (795480) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (795480) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (799520) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (801720) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (801720) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (803690) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (803690) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (806620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (806620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (809050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (811590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (811590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (815050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (819550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (819550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (822110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (822110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (825040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (828670) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (831940) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (834100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (836310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (836310) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (838590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (838600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (841030) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (841030) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (843080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (845550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (848080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (848080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (850500) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (853680) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (857150) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (859210) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (862260) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (865600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (865600) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (867960) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (867970) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (872550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (872550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (874870) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (877190) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (879640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (882120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (882130) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (885050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (887180) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (887180) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (890240) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (892430) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (894590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (894590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (898180) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (898180) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (900570) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (900580) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (903080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (903080) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (905170) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (908110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (908110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (910930) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (916040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (916040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (918950) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (921580) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (923870) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (926440) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (928690) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (928690) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (931040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (931040) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (933090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (935250) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (938320) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (941070) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (941070) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (943640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (943640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (945630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (945630) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (947700) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (952640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (952640) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (956590) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (959110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (961090) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (963100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (963100) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (965250) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (965250) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (967270) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (970140) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (975190) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (978120) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (982000) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (986050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (986050) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (988650) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (992910) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (995110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (998110) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1000660) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1003200) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1005550) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1007740) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1012280) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1014620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1014620) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1017060) wifi:[ADDBA]rx delba, code:37, delete tid:0
+W (1019690) wifi:

@@ -60,9 +60,9 @@ void wifi_init_softap(void)
     ESP_LOGI(TAG, "wifi_init_softap finished. SSID:%s password:%s channel:%d",
              EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS, EXAMPLE_ESP_WIFI_CHANNEL);
 
-    uint8_t raspberry_pi_mac[6] = RASPBERRY_PI_MAC_ADDR;
-    ip4_addr_t raspberry_pi_ip;
-    IP4_ADDR(&raspberry_pi_ip, 192, 168, 4, 100);
+    //uint8_t raspberry_pi_mac[6] = RASPBERRY_PI_MAC_ADDR;
+    //ip4_addr_t raspberry_pi_ip;
+    //IP4_ADDR(&raspberry_pi_ip, 192, 168, 4, 100);
 
     //dhcps_register_mac_static_ip(raspberry_pi_mac, &raspberry_pi_ip);
 }
