@@ -1,0 +1,5 @@
+[1/4] cd /home/pi/code/softap-dhcp/build/esp-idf/esptool_py && /home/pi/.espressif/python_env/idf5.3_py3.9_env/bin/python /home/pi/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/pi/code/softap-dhcp/build/partition_table/partition-table.bin /home/pi/code/softap-dhcp/build/wifi_xprize_softAPdhcp.bin
+wifi_xprize_softAPdhcp.bin binary size 0xc9180 bytes. Smallest app partition is 0x100000 bytes. 0x36e80 bytes (21%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /home/pi/code/softap-dhcp/build/bootloader/esp-idf/esptool_py && /home/pi/.espressif/python_env/idf5.3_py3.9_env/bin/python /home/pi/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/pi/code/softap-dhcp/build/bootloader/bootloader.bin
+Bootloader binary size 0x6880 bytes. 0x780 bytes (7%) free.

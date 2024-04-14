@@ -20,7 +20,7 @@
 -- Found Python3: /home/pi/.espressif/python_env/idf5.3_py3.9_env/bin/python (found version "3.9.2") found components: Interpreter 
 -- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
 -- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
--- App "wifi_xprize_softAPdhcp" version: da1187d-dirty
+-- App "wifi_xprize_softAPdhcp" version: 058aa08-dirty
 -- Adding linker script /home/pi/code/softap-dhcp/build/esp-idf/esp_system/ld/memory.ld
 -- Adding linker script /home/pi/code/softap-dhcp/build/esp-idf/esp_system/ld/sections.ld.in
 -- Adding linker script /home/pi/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld

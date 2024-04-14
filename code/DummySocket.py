@@ -69,7 +69,7 @@ async def handle_websocket(websocket, path):
 async def start_websocket_server():
     while True:
         try:
-            async with websockets.serve(handle_websocket, "localhost", 7000):
+            async with websockets.serve(handle_websocket, "0.0.0.0", 7000):
                 logging.info("WebSocket server started on port 7000")
                 await asyncio.Future()
         except OSError as e:

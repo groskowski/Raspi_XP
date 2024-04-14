@@ -37,14 +37,19 @@ log "Port 7000 open."
 log "Starting the PHP server..."
 cd /home/pi/code/Website
 sudo php -S 0.0.0.0:80 >/dev/null 2>&1 &
+sleep 0.1
 php_pid=$!
 log "PHP server process started."
 
+sleep 2
+
 # Start the Python script
 log "Starting the Python script..."
-cd /home/pi/code
-python DummySocket.py >/dev/null 2>&1 &
+nohup /usr/bin/python3 /home/pi/code/DummySocket.py >/dev/null 2>&1 &
+sleep 0.1
 python_pid=$!
 log "Python script process started."
 
-sudo check_status
+sleep 2
+
+check_status
