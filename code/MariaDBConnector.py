@@ -56,6 +56,19 @@ class DatabaseManager:
         column_definitions.insert(0, "id INT AUTO_INCREMENT PRIMARY KEY")
         self.cursor.execute(f"CREATE TABLE {table_name} ({', '.join(column_definitions)})")
 
+   def execute_query(self, query, params=None):
+        try:
+            self.cursor.execute(query, params)
+            result = self.cursor.fetchall()
+            self.connection.commit()
+            return result
+        except mysql.connector.Error as e:
+            print(f"Error executing query: {str(e)}")
+            self.connection.rollback()
+            raise
+        finally:
+            self.close()
+
     def add_column(self, table_name, column, value):
         if isinstance(value, int):
             self.cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN {column} INT")
