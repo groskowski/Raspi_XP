@@ -71,6 +71,7 @@ sudo pip install urllib3==1.26.5
 sudo pip install v4l2-python3==0.3.2
 sudo pip install websockets==12.0
 sudo pip install wheel==0.34.2
+sudo pip install pyserial
 
 # Clone the project repository
 git clone https://github.com/groskowski/Raspi_XP.git ~/

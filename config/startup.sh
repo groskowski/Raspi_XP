@@ -44,11 +44,11 @@ log "PHP server process started."
 sleep 2
 
 # Start the Python script
-log "Starting the Python script..."
-nohup /usr/bin/python3 /home/pi/code/DummySocket.py >/dev/null 2>&1 &
-sleep 0.1
-python_pid=$!
-log "Python script process started."
+#log "Starting the Python script..."
+#nohup /usr/bin/python3 /home/pi/code/DummySocket.py >/dev/null 2>&1 &
+#sleep 0.1
+#python_pid=$!
+#log "Python script process started."
 
 sudo pigpiod
 

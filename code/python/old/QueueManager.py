@@ -1,7 +1,7 @@
 import time
 from MariaDBConnector import DatabaseManager, LoggingHandler
 import logging, json
-from SPIComs import SPIComs
+from spi_comms import SPIComs
 
 db = None
 
@@ -39,12 +39,16 @@ def execute(command: str, target: int):
     """
     try:
         logging.info(f'Sending command {command} to node #{target}')
-        send_command(wrap_command(command, target))
-        time.sleep(2)
+        if ';' in command:
+            command, value = command.split(';')
+            send_command(wrap_command(command, target, value.strip()))
+        else: send_command(wrap_command(command, target))
+        time.sleep(1)
         return 1
     except Exception as e:
         logging.error(f"Error executing command: {str(e)}")
-        time.sleep(2)
+        time.sleep(1)
+        return 0
 
 def check_requests():
     """
@@ -63,11 +67,11 @@ def check_requests():
                 target = request[3]
                 service_id = request[4]
                 try:
-                    status = execute(command, target)
-                    update_query = "UPDATE requests SET resolved = 1 WHERE id = %s"
-                    db.execute_query(update_query, (request_id,))
-                    insert_query = "INSERT INTO responses (target, service_id, status) VALUES (%s, %s, %s)"
-                    db.execute_query(insert_query, (target, service_id, -1))
+                    if execute(command, target):
+                        update_query = "UPDATE requests SET resolved = 1 WHERE id = %s"
+                        db.execute_query(update_query, (request_id,))
+                        insert_query = "INSERT INTO responses (target, service_id, status) VALUES (%s, %s, %s)"
+                        db.execute_query(insert_query, (target, service_id, -1))
                 except Exception as e:
                     logging.error(f"Error executing request {request_id}: {str(e)}")
                     db.connection.rollback()

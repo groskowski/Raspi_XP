@@ -1,4 +1,4 @@
-from SPIComs import *
+from spi_comms import *
 import enum
 import json
 import random
