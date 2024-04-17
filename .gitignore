@@ -10,3 +10,4 @@ esp/esp-idf
 .bashrc
 .bash_logout
 .bash_history
+.dotnet/

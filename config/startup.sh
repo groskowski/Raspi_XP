@@ -50,6 +50,8 @@ sleep 0.1
 python_pid=$!
 log "Python script process started."
 
+sudo pigpiod
+
 sleep 2
 
 check_status

@@ -1,36 +1,8 @@
-import spidev
-import random
-import string
-import pigpio
+from SPIComs import *
 import enum
 import json
+import random
 
-# Create an SPI object (connecting to /dev/spidev0.1)
-spi = spidev.SpiDev(0, 1)
-spi.max_speed_hz = 400000
-
-pi = pigpio.pi()
-irq_pin = 40
-
-# Send data, d_type must be a number and data must be a byte array
-def sendPKG(d_type, data):
-    start_byte = "$".encode('utf-8')
-    type_byte = bytes([d_type])
-    length_byte = bytes([len(data)])
-    
-    bytes_to_send = start_byte + type_byte + length_byte + data
-    
-    print(bytes_to_send)
-    
-    spi.xfer(bytes_to_send)
-
-# Testing Function 
-def random_string(length):
-    letters = string.ascii_letters
-    return ''.join(random.choice(letters) for _ in range(length))
-
-len_data = 250
- 
 #Radio Test Function
 class MessageType(enum.Enum): # Define the MessageType enum
     DATA = 1
@@ -62,6 +34,6 @@ def random_radio_test():
     return json.dumps({"MSG_TYPE": msg_type.name, "dest": dest, "variable": variable}).encode('utf-8')
 
 #sendPKG(1, random_string(len_data).encode('utf-8'))
-sendPKG(1, random_radio_test())
- 
-spi.close()
+coms = SPIComs()
+coms.send_pkg(coms.get_pkg(1, random_radio_test()))
+coms.close()
