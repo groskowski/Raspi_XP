@@ -1,10 +1,11 @@
 import time
 from MariaDBConnector import DatabaseManager, LoggingHandler
-import logging
+import logging, json
+from SPIComs import SPIComs
 
 db = None
 
-def get_db_connection() -> DatabaseManager:
+def get_db_connection():
     """
     Get the database connection. If no connection exists, create a new one.
 
@@ -23,8 +24,12 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 handler = LoggingHandler(get_db_connection())
 logger.addHandler(handler)
+coms = SPIComs()
 
-def execute(command: str, target: int) -> int:
+def wrap_command(command, target, param=0): return json.dumps({"MSG_TYPE": command, "dest": target, "variable": param}).encode('utf-8')
+def send_command(command): coms.send_pkg(coms.get_pkg(1, command))
+
+def execute(command: str, target: int):
     """
     Execute a command on a target node.
 
@@ -34,11 +39,12 @@ def execute(command: str, target: int) -> int:
     """
     try:
         logging.info(f'Sending command {command} to node #{target}')
+        send_command(wrap_command(command, target))
         time.sleep(2)
         return 1
     except Exception as e:
         logging.error(f"Error executing command: {str(e)}")
-        raise
+        time.sleep(2)
 
 def check_requests():
     """
@@ -69,6 +75,9 @@ def check_requests():
             logging.error(f"Error connecting to the database: {str(e)}")
             db = None
             time.sleep(0.5)
+            coms.close()
+            time.sleep(0.5)
+            coms = SPIComs()
 
 while True:
     try:

@@ -31,6 +31,7 @@ class DatabaseManager:
 
         :param obj: The object to be inserted.
         """
+        cursor = None
         try:
             table_name = type(obj).__name__
             attributes = vars(obj)
@@ -58,6 +59,9 @@ class DatabaseManager:
             logging.error(f"Error inserting object: {str(e)}")
             self.connection.rollback()
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def create_table(self, table_name: str, attributes: dict):
         """
@@ -66,6 +70,7 @@ class DatabaseManager:
         :param table_name: The name of the table to be created.
         :param attributes: A dictionary representing the attributes of the table.
         """
+        cursor = None
         try:
             column_definitions = []
             for column, value in attributes.items():
@@ -86,24 +91,31 @@ class DatabaseManager:
             logging.error(f"Error creating table: {str(e)}")
             self.connection.rollback()
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def execute_query(self, query: str, params=None):
         """
         Execute a SQL query with optional parameters.
-
         :param query: The SQL query to be executed.
         :param params: Optional parameters to be passed to the query.
         :return: The result of the query.
         """
+        cursor = None
         try:
-            self.connection.cursor().execute(query, params)
-            result = self.connection.cursor().fetchall()
+            cursor = self.connection.cursor()
+            cursor.execute(query, params)
+            result = cursor.fetchall()
             self.connection.commit()
             return result
         except mysql.connector.Error as e:
             logging.error(f"Error executing query: {str(e)}")
             self.connection.rollback()
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def add_column(self, table_name: str, column: str, value: object):
         """
@@ -113,6 +125,7 @@ class DatabaseManager:
         :param column: The name of the new column.
         :param value: The value to determine the data type of the new column.
         """
+        cursor = None
         try:
             if isinstance(value, int):
                 alter_query = f"ALTER TABLE {table_name} ADD COLUMN {column} INT"
@@ -128,6 +141,9 @@ class DatabaseManager:
             logging.error(f"Error adding column: {str(e)}")
             self.connection.rollback()
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def query_object(self, cls: type, **kwargs):
         """
@@ -137,6 +153,7 @@ class DatabaseManager:
         :param kwargs: Keyword arguments representing the conditions for the query.
         :return: The queried object if found, None otherwise.
         """
+        cursor = None
         try:
             table_name = cls.__name__
             conditions = ' AND '.join([f"{column} = %s" for column in kwargs.keys()])
@@ -156,6 +173,9 @@ class DatabaseManager:
         except Exception as e:
             logging.error(f"Error querying object: {str(e)}")
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def delete_object(self, cls: type, **kwargs):
         """
@@ -164,6 +184,7 @@ class DatabaseManager:
         :param cls: The class of the object to be deleted.
         :param kwargs: Keyword arguments representing the conditions for the deletion.
         """
+        cursor = None
         try:
             table_name = cls.__name__
             conditions = ' AND '.join([f"{column} = %s" for column in kwargs.keys()])
@@ -174,6 +195,9 @@ class DatabaseManager:
             logging.error(f"Error deleting object: {str(e)}")
             self.connection.rollback()
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def update_object(self, obj: object):
         """
@@ -181,6 +205,7 @@ class DatabaseManager:
 
         :param obj: The object to be updated.
         """
+        cursor = None
         try:
             table_name = type(obj).__name__
             attributes = vars(obj)
@@ -195,6 +220,9 @@ class DatabaseManager:
             logging.error(f"Error updating object: {str(e)}")
             self.connection.rollback()
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def close(self):
         """
@@ -224,6 +252,7 @@ class LoggingHandler(logging.Handler):
 
         :param record: The log record to be emitted.
         """
+        cursor = None
         try:
             msg = self.format(record)
             query = "INSERT INTO log (message, type) VALUES (%s, %s)"
@@ -231,6 +260,9 @@ class LoggingHandler(logging.Handler):
         except Exception as e:
             logging.error(f"Error emitting log record: {str(e)}")
             raise
+        finally:
+            if cursor:
+                cursor.close()
 
     def close(self):
         """
@@ -242,3 +274,4 @@ class LoggingHandler(logging.Handler):
         except Exception as e:
             logging.error(f"Error closing LoggingHandler: {str(e)}")
             raise
+
