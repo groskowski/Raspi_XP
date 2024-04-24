@@ -9,7 +9,7 @@ else
 fi
 
 # Check if the Python script is running
-python_pid=$(pgrep -f "/usr/bin/python3 /home/pi/code/DummySocket.py")
+python_pid=$(pgrep -f "python3 /home/pi/code/python/main.py")
 if [ -n "$python_pid" ]; then
     echo "Python script is running (PID: $python_pid)"
 else

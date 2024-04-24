@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if verbose flag is set
-VERBOSE=0
+VERBOSE=1
 if [[ "$1" == "--verbose" ]]; then
   VERBOSE=1
 fi
@@ -43,15 +43,31 @@ log "PHP server process started."
 
 sleep 2
 
-# Start the Python script
-#log "Starting the Python script..."
-#nohup /usr/bin/python3 /home/pi/code/DummySocket.py >/dev/null 2>&1 &
-#sleep 0.1
-#python_pid=$!
-#log "Python script process started."
+log "Restarting daemon..."
+sudo killall pigpiod >/dev/null 2>&1 &
+sudo pigpiod >/dev/null 2>&1 &
 
-sudo pigpiod
+sleep 3
 
-sleep 2
+function check_py_status() {
+    if ps -p $python_pid > /dev/null
+    then
+        log "Python script is running."
+    else
+        log "Python script has stopped. Restarting..."
+        python3 /home/pi/code/python/main.py &
+        python_pid=$!
+        log "Python script restarted."
+    fi
+}
 
-check_status
+# Run the while loop in the background
+(
+    while true
+    do
+        check_py_status
+        sleep 300
+    done
+) &
+
+log "Startup script completed."

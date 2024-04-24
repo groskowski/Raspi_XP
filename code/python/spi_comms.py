@@ -4,7 +4,7 @@ import string, json
 import RPi.GPIO as GPIO
 
 class SPIComs:
-    def __init__(self, spi_port=0, spi_device=1, irq_pin=40):
+    def __init__(self, spi_port=0, spi_device=1, irq_pin=37):
         # Setup SPI
         self.spi = spidev.SpiDev(spi_port, spi_device)
         self.spi.max_speed_hz = 400000
@@ -12,7 +12,7 @@ class SPIComs:
         # Setup GPIO
         self.irq_pin = irq_pin
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(self.irq_pin, GPIO.IN)
+        GPIO.setup(self.irq_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     def read_irq_pin(self):
         return GPIO.input(self.irq_pin)
@@ -49,6 +49,23 @@ class SPIComs:
     def get_ranS_pkg(self, length):
         data = self.random_string(length).encode('utf-8')
         return self.get_pkg(1, data)
+    
+    def read_pkg(self):
+        read_data = self.spi.xfer([0x24, 0x00, 0x00, 0x00])
+        data_length = int(read_data[-1])
+
+        read_data = self.spi.xfer([0] * data_length)
+        crc = self.spi.xfer([0, 0])
+
+        assembled_pkg = "$".encode('utf-8') + bytes([1, data_length]) + bytes(read_data)
+
+        if(self.crc16_ccitt(assembled_pkg, 1) ==  (crc[0] << 8 | crc[1])):
+            print('Got Correct data')
+
+        else:
+            print('Got incorrect data')
+
+        return assembled_pkg
 
     def close(self):
         self.spi.close()

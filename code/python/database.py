@@ -1,5 +1,5 @@
 import logging
-import mysql.connector
+import mysql.connector  
 from datetime import datetime
 
 class DatabaseManager:
