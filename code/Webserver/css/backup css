@@ -1,0 +1,411 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navigation li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Filter Options Styles */
+.filter-options {
+  color: white;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.filter-options label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.filter-options select {
+  padding: 8px 16px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Sensor Grid Styles */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.sensor-block {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.sensor-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Battery Indicator Styles */
+.battery-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.battery-indicator.low {
+  background-color: #ff4d4d;
+}
+
+.battery-indicator.medium {
+  background-color: #ffa500;
+}
+
+.battery-indicator.high {
+  background-color: #4CAF50;
+}
+
+/* Sensor Header Styles */
+.sensor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sensor-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.last-update {
+  font-size: 16px;
+  color: #888;
+}
+
+/* Sensor Body Styles */
+.sensor-body p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+/* Details Button Styles */
+.details-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.details-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .sensor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Loading Overlay Styles */
+.loading-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-bar {
+  width: 50%;
+  height: 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.5s ease;
+}
+
+/* Refresh Button Styles */
+.refresh-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cancel-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* NavBar buttons */
+.navbar-buttons {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Node Details */
+.node-details-container {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  grid-gap: 20px;
+}
+
+.main-content {
+  max-width: 1200px;
+  float:left;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.node-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.node-detail-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.node-detail-item h3 {
+  margin-top: 0;
+  color: #333333;
+}
+
+.node-detail-item p {
+  margin-bottom: 5px;
+}
+
+.image-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.update-button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.update-button:hover {
+  background-color: #45a049;
+}
+
+/* Function blocks and buttons*/
+.function-blocks {
+  float:right;
+  top: 100px;
+  right: 20px;
+  z-index: 1;
+}
+
+.function-block {
+  margin-bottom: 20px;
+}
+
+.function-block h4 {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.function-block .content {
+  display: none;
+}
+
+.function-block.active .content {
+  display: block;
+}
+
+.function-block button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.function-block button:hover {
+  background-color: #45a049;
+}
+
+.function-block button i {
+  margin-right: 5px;
+}
+
+.function-block input {
+  margin-left: 5px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.popup-buttons {
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  margin: 0 10px;
+}
+
+.collect-button{
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
