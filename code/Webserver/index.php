@@ -68,7 +68,7 @@
     <div class="sensor-grid">
     <?php
       // Fetch unique sensors from the database
-      $result = $conn->query("SELECT DISTINCT pid FROM sensor_data");
+      $result = $conn->query("SELECT DISTINCT pid FROM node_table");
 
       if ($result->num_rows > 0) {
           $sensor_data = array();
@@ -77,7 +77,7 @@
               $pid = $row['pid'];
 
               // Fetch the last record for the current sensor
-              $sql_last = "SELECT * FROM sensor_data WHERE pid = $pid";
+              $sql_last = "SELECT * FROM sensor_data WHERE pid = $pid ORDER BY insertion_time DESC LIMIT 1";
               $result_last = $conn->query($sql_last);
 
               if ($result_last->num_rows > 0) {

@@ -108,11 +108,11 @@ if ($nodeId !== null) {
                         $image_available = true;
 
                         if ($image_available) {
-                            echo '<img src="dummy-image.jpg" alt="Node Image">';
+                            echo '<img src="img/node_' . $pid . '.jpg" alt="Node Image">';
                         } else {
                             echo 'No image available for this node.';
                         }
-                        ?>
+                        ?>  
                         <br/>
                         <button class="refresh-button" onclick="sendCommand('TEST_PHOTO')">Request Image</button>
                     </div>

@@ -35,7 +35,7 @@ log "Port 7000 open."
 
 # Start the PHP server
 log "Starting the PHP server..."
-cd /home/pi/code/Website
+cd /home/pi/code/Webserver
 sudo php -S 0.0.0.0:80 >/dev/null 2>&1 &
 sleep 0.1
 php_pid=$!
